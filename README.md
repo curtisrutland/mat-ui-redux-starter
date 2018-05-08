@@ -3,6 +3,10 @@ This is my starter template for new React-Redux applications using Material UI. 
 
 Service Worker code is still there, but commented out. Otherwise, used create-react-app.
 
+#Live Demo:
+
+https://curtisrutland.github.io/mat-ui-redux-starter/
+
 # Create-React-App Stuff
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
