@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { withStyles } from 'material-ui/styles';
-import SwipeableDrawer from 'material-ui/SwipeableDrawer';
-import List, {
-  ListItem, ListItemIcon, ListItemText
-} from 'material-ui/List';
+import { withStyles } from '@material-ui/core/styles';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import {
+  List, ListItem, ListItemIcon,
+  ListItemText
+} from '@material-ui/core';
 
 import * as UiActions from "../../redux/ui/actions";
 import GithubIcon from './GithubIcon';

@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import withRootTheme from "../theme/withRootTheme";
 import TitleBar from '../components/ui/TitleBar';
 import SideDrawer from '../components/ui/SideDrawer';
-import { Typography } from 'material-ui';
+import { Typography } from '@material-ui/core';
 
 const styles = {
   root: {
