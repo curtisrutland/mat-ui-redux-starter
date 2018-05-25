@@ -23,8 +23,11 @@ const styles = {
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20,
   },
+  titleButton: {
+    paddingLeft: 0,
+    paddingRight: 0
+  }
 };
 
 
@@ -36,7 +39,7 @@ const titleBar = ({ classes, actions }) => {
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu" onClick={actions.toggleDrawer}>
             <MenuIcon />
           </IconButton>
-          <Button color="inherit" size="large" onClick={actions.toggleDrawer}>
+          <Button color="inherit" size="large" onClick={actions.toggleDrawer} className={classes.titleButton}>
             <Typography variant="title" color="inherit" className={classes.title}>
               Mat-UI Redux Starter
           </Typography>
