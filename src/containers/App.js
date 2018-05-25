@@ -28,4 +28,6 @@ const app = ({ classes }) => {
   )
 };
 
-export default withRootTheme(withStyles(styles)(app));
+export const LightThemeApp = withRootTheme(withStyles(styles)(app));
+export const DarkThemeApp = withRootTheme(withStyles(styles)(app), true);
+export default LightThemeApp;

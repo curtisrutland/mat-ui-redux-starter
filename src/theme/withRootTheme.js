@@ -2,11 +2,14 @@ import React from 'react';
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import theme from "./light";
-//import theme from "./dark";
-const muiTheme = createMuiTheme(theme);
+import light from "./light";
+import dark from "./dark";
 
-const withRootTheme = (Component) => props => {
+const lightTheme = createMuiTheme(light);
+const darkTheme = createMuiTheme(dark);
+
+const withRootTheme = (Component, useDarkTheme = false) => props => {
+  const muiTheme = useDarkTheme ? darkTheme : lightTheme;
   return (
     <MuiThemeProvider theme={muiTheme}>
       <CssBaseline />

@@ -1,7 +1,11 @@
-import { TOGGLE_DRAWER, OPEN_DRAWER, CLOSE_DRAWER } from "./actionTypes";
+import {
+  TOGGLE_DRAWER, OPEN_DRAWER, CLOSE_DRAWER,
+  TOGGLE_THEME
+} from "./actionTypes";
 
 const initialState = {
-  drawerOpen: false
+  drawerOpen: false,
+  useDarkTheme: false
 };
 
 export default (state = initialState, action) => {
@@ -22,6 +26,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         drawerOpen: false
+      }
+
+    case TOGGLE_THEME:
+      return {
+        ...state,
+        useDarkTheme: !state.useDarkTheme
       }
 
     default:

@@ -10,6 +10,8 @@ import {
 
 import * as UiActions from "../../redux/ui/actions";
 import GithubIcon from './GithubIcon';
+import ToggleOffIcon from "./ToggleOffIcon";
+import ToggleOnIcon from "./ToggleOnIcon";
 
 const styles = {
   list: {
@@ -21,15 +23,18 @@ const styles = {
 };
 
 const mapStateToProps = ({ ui }) => {
-  const { drawerOpen } = ui;
-  return { drawerOpen };
+  const { drawerOpen, useDarkTheme } = ui;
+  return { drawerOpen, useDarkTheme };
 };
 
 const mapDispatchtoProps = dispatch => ({
   uiActions: bindActionCreators(UiActions, dispatch),
 });
 
-const sideDrawer = ({ drawerOpen, uiActions, todoActions, classes }) => {
+const sideDrawer = ({
+  drawerOpen, uiActions, todoActions,
+  classes, useDarkTheme
+}) => {
   return (
     <SwipeableDrawer open={drawerOpen} onOpen={uiActions.openDrawer} onClose={uiActions.closeDrawer}>
       <div tabIndex={0} role="button" onClick={uiActions.closeDrawer} onKeyDown={uiActions.closeDrawer}>
@@ -40,6 +45,12 @@ const sideDrawer = ({ drawerOpen, uiActions, todoActions, classes }) => {
                 <GithubIcon />
               </ListItemIcon>
               <ListItemText primary="Project Github" />
+            </ListItem>
+            <ListItem button onClick={uiActions.toggleTheme}>
+              <ListItemIcon>
+                {useDarkTheme ? <ToggleOnIcon /> : <ToggleOffIcon />}
+              </ListItemIcon>
+              <ListItemText primary="Toggle Theme" />
             </ListItem>
           </List>
         </div>
